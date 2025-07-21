@@ -34,10 +34,14 @@ def generate_report(df, subject_info, online_estimate_avg):
         doc.add_paragraph("Comparable Properties")
         table = doc.add_table(rows=1, cols=8)
         hdr = table.rows[0].cells
-        hdr[:] = [cell.text for cell in [
-            "Address", "Close Price", "Concessions", "AG SF",
-            "AG Diff", "Total Adj", "Adjusted Price", "Adj PPSF"
-        ]]
+        hdr[0].text = "Address"
+        hdr[1].text = "Close Price"
+        hdr[2].text = "Concessions"
+        hdr[3].text = "AG SF"
+        hdr[4].text = "AG Diff"
+        hdr[5].text = "Total Adj"
+        hdr[6].text = "Adjusted Price"
+        hdr[7].text = "Adj PPSF"
 
         for comp in adjusted_rows:
             row_cells = table.add_row().cells
